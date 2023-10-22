@@ -21,8 +21,8 @@ app.all('/*', async (req, res) => {
     const proxyParams = parseProxyParameters(req)
     if(!proxyParams.url) {
       return res.status(400).json({
-        "title": "CORS Proxy Error - Required parameter is missing",
-        "detail": "The parameter: url was not provided",
+        "title": "CORS Proxy Error - Parametri richiesti mancanti",
+        "detail": "Il parametro: url non è stato specificato",
       }) 
     }
     
@@ -34,7 +34,7 @@ app.all('/*', async (req, res) => {
   } catch(err) { 
     console.error(err)
     return res.status(500).json({
-      "title": "CORS Proxy Error - Internal server error",
+      "title": "CORS Proxy Error - Internal server error 500",
       "detail": err.message,
     }) 
   }
