@@ -5,7 +5,7 @@ import request from 'request'
 function parseProxyParameters(proxyRequest){
   const params = {}
   // url - treat everything right to url= query parameter as target url value
-  const urlMatch = proxyRequest.url.match(/(?<=[?&])url=(?<url>.*)$/)
+  const urlMatch = proxyRequest.url.match(/(?<url>.*)$/)
   if(urlMatch) {
     params.url =  decodeURIComponent(urlMatch.groups.url)
   }
