@@ -5,7 +5,7 @@ import request from 'request'
 function parseProxyParameters(proxyRequest){
   const params = {}
   // url - treat everything right to url= query parameter as target url value
-  const urlMatch = proxyRequest.url.match(/https:\/\/cors\.giaflix\.net\/(.+)/)
+  const urlMatch = proxyRequest.url.match(/https:\/\/cors\.giaflix\.net\/(.+)/)[1];
   if(urlMatch) {
     params.url =  decodeURIComponent(urlMatch.groups.url)
   }
